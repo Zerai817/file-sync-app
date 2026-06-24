@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from "react";
-import { clearLocalSession } from "@/hooks/useLogout";
+import { clearLocalSession } from "@/lib/session";
 
 interface User {
   id: string;
@@ -74,7 +74,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = async () => {
     try {
-      await fetch("/api/auth/logout", { method: "POST" });
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+        cache: "no-store",
+      });
+    } catch {
+      // Continue logout even if network fails
     } finally {
       clearLocalSession();
       setUser(null);

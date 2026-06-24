@@ -61,6 +61,6 @@ export function isAllowedMimeType(mimeType: string): boolean {
 }
 
 export function getMaxFileSize(): number {
-  const mb = parseInt(process.env.MAX_FILE_SIZE_MB || "50", 10);
+  const mb = parseInt(process.env.MAX_FILE_SIZE_MB || "100", 10);
   return mb * 1024 * 1024;
 }
