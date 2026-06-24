@@ -7,14 +7,13 @@ import {
   Files,
   Smartphone,
   Settings,
-  LogOut,
   RefreshCw,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useAuth } from "@/hooks/useAuth";
 import { useSync } from "@/hooks/useSync";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LogoutButton } from "@/components/auth/LogoutButton";
 
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, key: "dashboard" },
@@ -25,10 +24,8 @@ const navItems = [
 
 export function Sidebar() {
   const t = useTranslations("nav");
-  const tCommon = useTranslations("common");
   const tDash = useTranslations("dashboard");
   const pathname = usePathname();
-  const { logout } = useAuth();
   const { sync, syncing } = useSync();
 
   return (
@@ -74,13 +71,7 @@ export function Sidebar() {
           <RefreshCw className="h-4 w-4" />
           {syncing ? tDash("syncing") : tDash("quickSync")}
         </Button>
-        <button
-          onClick={() => logout()}
-          className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800"
-        >
-          <LogOut className="h-4 w-4" />
-          {tCommon("logout")}
-        </button>
+        <LogoutButton fullWidth className="justify-start px-3" />
       </div>
     </aside>
   );

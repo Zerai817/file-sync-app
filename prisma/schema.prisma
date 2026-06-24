@@ -17,8 +17,9 @@ model User {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  devices Device[]
-  files   File[]
+  devices       Device[]
+  files         File[]
+  passwordResets PasswordReset[]
 }
 
 model Device {
@@ -66,4 +67,18 @@ model SyncQueue {
   createdAt DateTime @default(now())
 
   @@index([userId, deviceId, status])
+}
+
+model PasswordReset {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+  @@index([userId])
 }

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/Button";
 import { useAuth } from "@/hooks/useAuth";
 import { useTheme } from "@/components/ThemeProvider";
 import { Moon, Sun, Globe } from "lucide-react";
+import { LogoutButton } from "@/components/auth/LogoutButton";
 
 const languages = [
   { code: "en", label: "English" },
@@ -84,6 +85,10 @@ function SettingsContent() {
             onChange={(e) => setName(e.target.value)}
           />
           <Input label="Email" value={user?.email || ""} disabled />
+          <div className="pt-2 border-t border-gray-100 dark:border-gray-800">
+            <p className="text-sm text-gray-500 mb-3">{t("logoutAccount")}</p>
+            <LogoutButton variant="danger" />
+          </div>
         </CardContent>
       </Card>
 

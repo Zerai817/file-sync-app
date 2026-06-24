@@ -29,7 +29,23 @@
     "signUp": "S'inscrire",
     "signIn": "Se connecter",
     "invalidCredentials": "E-mail ou mot de passe incorrect",
-    "passwordHint": "Au moins 8 caractères"
+    "passwordHint": "Au moins 8 caractères",
+    "forgotPassword": "Mot de passe oublié ?",
+    "forgotPasswordTitle": "Mot de passe oublié ?",
+    "forgotPasswordDesc": "Entrez votre e-mail et nous vous enverrons un lien de réinitialisation.",
+    "sendResetLink": "Envoyer le lien",
+    "resetEmailSent": "Si un compte existe, un lien a été envoyé à votre e-mail.",
+    "backToLogin": "Retour à la connexion",
+    "resetPasswordTitle": "Nouveau mot de passe",
+    "resetPasswordDesc": "Entrez votre nouveau mot de passe ci-dessous.",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "resetPassword": "Réinitialiser",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "resetFailed": "Échec de la réinitialisation",
+    "invalidResetLink": "Lien invalide ou expiré",
+    "requestNewLink": "Demander un nouveau lien",
+    "logoutSuccess": "Vous avez été déconnecté"
   },
   "nav": {
     "dashboard": "Tableau de bord",
@@ -117,7 +133,8 @@
     "saveSettings": "Enregistrer",
     "settingsSaved": "Paramètres enregistrés",
     "profile": "Profil",
-    "displayName": "Nom d'affichage"
+    "displayName": "Nom d'affichage",
+    "logoutAccount": "Se déconnecter de votre compte"
   },
   "sync": {
     "selectFolder": "Sélectionner le dossier de sync",

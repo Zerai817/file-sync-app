@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, useCallback, ReactNode } from "react";
+import { clearLocalSession } from "@/hooks/useLogout";
 
 interface User {
   id: string;
@@ -72,8 +73,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
-    setUser(null);
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+    } finally {
+      clearLocalSession();
+      setUser(null);
+    }
   };
 
   return (

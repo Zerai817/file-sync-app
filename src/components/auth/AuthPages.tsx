@@ -2,21 +2,21 @@
 
 import { useTranslations } from "next-intl";
 import { RefreshCw } from "lucide-react";
-import { AuthForm } from "@/components/auth/AuthForm";
+import { AuthForm, ForgotPasswordForm, ResetPasswordForm } from "@/components/auth/AuthForm";
 import { Card, CardContent } from "@/components/ui/Card";
 
 export function LoginPageContent() {
   const t = useTranslations("auth");
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
+    <div className="flex min-h-screen items-center justify-center px-4 py-8">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 mb-4">
             <RefreshCw className="h-6 w-6 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t("loginTitle")}</h1>
-          <p className="text-gray-500 mt-2">{t("loginSubtitle")}</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2">{t("loginSubtitle")}</p>
         </div>
         <Card>
           <CardContent className="pt-6">
@@ -32,18 +32,62 @@ export function RegisterPageContent() {
   const t = useTranslations("auth");
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
+    <div className="flex min-h-screen items-center justify-center px-4 py-8">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 mb-4">
             <RefreshCw className="h-6 w-6 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t("registerTitle")}</h1>
-          <p className="text-gray-500 mt-2">{t("registerSubtitle")}</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2">{t("registerSubtitle")}</p>
         </div>
         <Card>
           <CardContent className="pt-6">
             <AuthForm mode="register" />
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
+
+export function ForgotPasswordPageContent() {
+  const t = useTranslations("auth");
+
+  return (
+    <div className="flex min-h-screen items-center justify-center px-4 py-8">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-8">
+          <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 mb-4">
+            <RefreshCw className="h-6 w-6 text-white" />
+          </div>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t("forgotPasswordTitle")}</h1>
+        </div>
+        <Card>
+          <CardContent className="pt-6">
+            <ForgotPasswordForm />
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
+
+export function ResetPasswordPageContent({ token }: { token: string }) {
+  const t = useTranslations("auth");
+
+  return (
+    <div className="flex min-h-screen items-center justify-center px-4 py-8">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-8">
+          <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 mb-4">
+            <RefreshCw className="h-6 w-6 text-white" />
+          </div>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t("resetPasswordTitle")}</h1>
+        </div>
+        <Card>
+          <CardContent className="pt-6">
+            <ResetPasswordForm token={token} />
           </CardContent>
         </Card>
       </div>

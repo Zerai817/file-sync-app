@@ -29,7 +29,23 @@
     "signUp": "Sign up",
     "signIn": "Sign in",
     "invalidCredentials": "Invalid email or password",
-    "passwordHint": "At least 8 characters"
+    "passwordHint": "At least 8 characters",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordTitle": "Forgot your password?",
+    "forgotPasswordDesc": "Enter your email and we'll send you a reset link.",
+    "sendResetLink": "Send reset link",
+    "resetEmailSent": "If an account exists, a reset link has been sent to your email.",
+    "backToLogin": "Back to login",
+    "resetPasswordTitle": "Set new password",
+    "resetPasswordDesc": "Enter your new password below.",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "resetPassword": "Reset password",
+    "passwordMismatch": "Passwords do not match",
+    "resetFailed": "Failed to reset password",
+    "invalidResetLink": "Invalid or expired reset link",
+    "requestNewLink": "Request a new link",
+    "logoutSuccess": "You have been logged out"
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -117,7 +133,8 @@
     "saveSettings": "Save Settings",
     "settingsSaved": "Settings saved",
     "profile": "Profile",
-    "displayName": "Display name"
+    "displayName": "Display name",
+    "logoutAccount": "Sign out of your account"
   },
   "sync": {
     "selectFolder": "Select sync folder",
